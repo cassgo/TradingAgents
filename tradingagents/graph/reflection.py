@@ -78,7 +78,7 @@ Adhere strictly to these instructions, and ensure your output is detailed, accur
         result = self._reflect_on_component(
             "BULL", bull_debate_history, situation, returns_losses
         )
-        bull_memory.add_situations([(situation, result)])
+        bull_memory.add_situations([(situation, result)], timestamp=current_state.get("trade_date"))
 
     def reflect_bear_researcher(self, current_state, returns_losses, bear_memory):
         """Reflect on bear researcher's analysis and update memory."""
@@ -88,7 +88,7 @@ Adhere strictly to these instructions, and ensure your output is detailed, accur
         result = self._reflect_on_component(
             "BEAR", bear_debate_history, situation, returns_losses
         )
-        bear_memory.add_situations([(situation, result)])
+        bear_memory.add_situations([(situation, result)], timestamp=current_state.get("trade_date"))
 
     def reflect_trader(self, current_state, returns_losses, trader_memory):
         """Reflect on trader's decision and update memory."""
@@ -98,7 +98,7 @@ Adhere strictly to these instructions, and ensure your output is detailed, accur
         result = self._reflect_on_component(
             "TRADER", trader_decision, situation, returns_losses
         )
-        trader_memory.add_situations([(situation, result)])
+        trader_memory.add_situations([(situation, result)], timestamp=current_state.get("trade_date"))
 
     def reflect_invest_judge(self, current_state, returns_losses, invest_judge_memory):
         """Reflect on investment judge's decision and update memory."""
@@ -108,7 +108,7 @@ Adhere strictly to these instructions, and ensure your output is detailed, accur
         result = self._reflect_on_component(
             "INVEST JUDGE", judge_decision, situation, returns_losses
         )
-        invest_judge_memory.add_situations([(situation, result)])
+        invest_judge_memory.add_situations([(situation, result)], timestamp=current_state.get("trade_date"))
 
     def reflect_risk_manager(self, current_state, returns_losses, risk_manager_memory):
         """Reflect on risk manager's decision and update memory."""
@@ -118,4 +118,4 @@ Adhere strictly to these instructions, and ensure your output is detailed, accur
         result = self._reflect_on_component(
             "RISK JUDGE", judge_decision, situation, returns_losses
         )
-        risk_manager_memory.add_situations([(situation, result)])
+        risk_manager_memory.add_situations([(situation, result)], timestamp=current_state.get("trade_date"))

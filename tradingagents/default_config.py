@@ -15,6 +15,9 @@ DEFAULT_CONFIG = {
     # Provider-specific thinking configuration
     "google_thinking_level": None,      # "high", "minimal", etc.
     "openai_reasoning_effort": None,    # "medium", "high", "low"
+    # Memory decay settings (ACT-R model)
+    "memory_decay_exponent": 0.5,
+    "memory_max_entries": 500,
     # Debate and discussion settings
     "max_debate_rounds": 1,
     "max_risk_discuss_rounds": 1,
